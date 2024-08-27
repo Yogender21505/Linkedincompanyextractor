@@ -28,25 +28,28 @@ This project enriches company data from LinkedIn using the LinkedIn Bulk Data Sc
 
 ### Setup
 
-1. **Clone the Repository:**
+1. **Create account in Rapidapi**
+   Firstly, do signup and copy the Api key that like "X-RapidAPI-Key:".
+   [Link](https://rapidapi.com/mgujjargamingm/api/linkedin-bulk-data-scraper/playground/apiendpoint_bdfef27d-5699-4004-ae68-045494819f37)
+3. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/Yogender21505/Linkedincompanyextractor.git
    cd your-repository
    ```
-2. **Create a Virtual Environment (optional but recommended):**
+4. **Create a Virtual Environment (optional but recommended):**
    ```bash
    python -m venv venv
    ```
-3. **Activate the Virtual Environment:**
+5. **Activate the Virtual Environment:**
     ```bash
     venv\Scripts\activate
     ```
-4. **Install Dependencies:**
+6. **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-5. **Set Up Environment Variables:**
+7. **Set Up Environment Variables:**
    ### Create a .env file in the root directory of the project with the following content:##
     ```bash
     DB_HOST=localhost
@@ -55,9 +58,9 @@ This project enriches company data from LinkedIn using the LinkedIn Bulk Data Sc
     DB_NAME=mydatabase
     RAPIDAPI_KEY=your_rapidapi_key
     ```
-6. **Database Setup:**
+8. **Database Setup:**
    Ensure your MySQL database has the required tables. The companies table should have columns company_id and company_linkedin_url, and the enriched_companies table should have columns for company_id, company_name, company_size, company_industry, and company_website.
-7. **Usage***
+9. **Usage***
     #### Run the main script to start the data enrichment process:
       ```bash
     python main.py
@@ -70,12 +73,12 @@ This project enriches company data from LinkedIn using the LinkedIn Bulk Data Sc
     ```bash
     python enrich_data.py
     ```
-9. **How It Works**
+10. **How It Works**
 Extraction: The extract_data.py script connects to the MySQL database, retrieves the list of companies with their LinkedIn URLs, and returns it as a list of dictionaries.
 Enrichment: The enrich_data.py script sends a request to the LinkedIn Bulk Data Scraper API with a company’s LinkedIn URL, processes the response to filter out unwanted data, and returns the enriched data.
 Integration: The main.py script coordinates the process by extracting data, enriching it, and inserting or updating it in the MySQL database.
 
-10. **Testing**
+11. **Testing**
   To test the functionality, ensure your database is properly set up and run the following commands to test data extraction and enrichment separately:
 
   ```bash
